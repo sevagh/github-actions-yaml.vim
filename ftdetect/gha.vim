@@ -7,5 +7,5 @@
 "au BufNewFile,BufReadPost */.github/workflows/*.y{a,}ml setlocal filetype=yaml.gha
 "au BufNewFile,BufRead,BufReadPost */action.y{a,}ml setlocal filetype=yaml.gha
 
-au BufNewFile,BufReadPost */.github/workflows/*.y{a,}ml setlocal filetype=bash.yaml.gha
-au BufNewFile,BufRead,BufReadPost */action.y{a,}ml setlocal filetype=bash.yaml.gha
+au BufNewFile,BufReadPost */.github/workflows/*.y{a,}ml setlocal filetype=yaml.bash.gha
+au BufNewFile,BufRead,BufReadPost */action.y{a,}ml setlocal filetype=yaml.bash.gha

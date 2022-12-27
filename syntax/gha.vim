@@ -44,18 +44,21 @@ hi def link GhaString String
 hi def link GhaOperator Operator
 hi def link GhaKeywordsFunction Function
 
-call SyntaxRange#Include('^\ *-{0,1} run: ', '^\ *-[^s]+:', 'bash')
-
 " borrowed from:
 " https://vi.stackexchange.com/a/38085
 
+syntax match equalsdoublequote "\v\=\"\$\{\{.{-}\}\}\"" containedin=ALL
+highlight equalsdoublequote ctermfg=57
+
 syntax match doublebraces "\v\$\{\{.{-}\}\}" containedin=ALL
-highlight doublebraces ctermfg=17 guifg=blue
+highlight doublebraces ctermfg=17
 
 syntax match braces "\v\$\{[0-9A-Za-z_.]{-}\}" containedin=ALL
-highlight braces ctermfg=22 guifg=green
+highlight braces ctermfg=22
 
 " ... in script block
 syntax match shDerefSimple "\${{.*}}" nextgroup=@shNoZSList
+
+call SyntaxRange#Include('^\ *-{0,1} run: ', '^\ *-[^s]+:', 'bash')
 
 let &cpo = s:save_cpo
