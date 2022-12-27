@@ -56,9 +56,10 @@ highlight doublebraces ctermfg=17
 syntax match braces "\v\$\{[0-9A-Za-z_.]{-}\}" containedin=ALL
 highlight braces ctermfg=22
 
+syntax match parens "\v\$\([^\(\)]+\)" containedin=ALL
+highlight parens ctermfg=96
+
 " ... in script block
 syntax match shDerefSimple "\${{.*}}" nextgroup=@shNoZSList
-
-call SyntaxRange#Include('^\ *-{0,1} run: ', '^\ *-[^s]+:', 'bash')
 
 let &cpo = s:save_cpo
