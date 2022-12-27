@@ -5,3 +5,4 @@
 
 " https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows
 au BufNewFile,BufReadPost */.github/workflows/*.y{a,}ml setlocal filetype=yaml.gha
+au BufNewFile,BufRead,BufReadPost */action.y{a,}ml setlocal filetype=yaml.gha
