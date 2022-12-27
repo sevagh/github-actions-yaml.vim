@@ -28,6 +28,7 @@ syn keyword GhaBoolean true false contained containedin=GhaDollarSyntax
 " small fixes.
 syn match GhaNumber /\<-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>/ contained containedin=GhaDollarSyntax
 syn region GhaString start=/'/ skip=/''/ end=/'/ contained containedin=GhaDollarSyntax
+
 syn match GhaOperator /\%(||\|&&\|==\|!=\|>=\|>\|<=\|<\|!\)/ contained containedin=GhaDollarSyntax
 exe 'syn region GhaFunction matchgroup=GhaKeywordsFunction start=/\<\%(' . join(gha#GetKeywordsFunction(), '\|') . '\)\ze(/ end=/\ze)/ contained containedin=GhaDollarSyntax contains=@GhaLiterals,GhaOperator,GhaKeywordsDollarSyntax'
 
@@ -42,5 +43,19 @@ hi def link GhaNumber Number
 hi def link GhaString String
 hi def link GhaOperator Operator
 hi def link GhaKeywordsFunction Function
+
+call SyntaxRange#Include('^\ *-{0,1} run: ', '^\ *-[^s]+:', 'bash')
+
+" borrowed from:
+" https://vi.stackexchange.com/a/38085
+
+syntax match doublebraces "\v\$\{\{.{-}\}\}" containedin=ALL
+highlight doublebraces ctermfg=17 guifg=blue
+
+syntax match braces "\v\$\{[0-9A-Za-z_.]{-}\}" containedin=ALL
+highlight braces ctermfg=22 guifg=green
+
+" ... in script block
+syntax match shDerefSimple "\${{.*}}" nextgroup=@shNoZSList
 
 let &cpo = s:save_cpo
