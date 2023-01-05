@@ -59,6 +59,9 @@ highlight braces ctermfg=22
 syntax match parens "\v\$\([^\(\)]+\)" containedin=ALL
 highlight parens ctermfg=96
 
+syntax match equalsdoublequoteparens "\v\=\"\$\([^\(\)]+\)\"" containedin=ALL
+highlight equalsdoublequoteparens ctermfg=197
+
 " ... in script block
 syntax match shDerefSimple "\${{.*}}" nextgroup=@shNoZSList
 
