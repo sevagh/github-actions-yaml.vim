@@ -62,6 +62,9 @@ highlight parens ctermfg=96
 syntax match equalsdoublequoteparens "\v\=\"\$\([^\(\)]+\)\"" containedin=ALL
 highlight equalsdoublequoteparens ctermfg=197
 
+" syntax match multiexpanse "\v\=\"\$\{[^\"]+\}" containedin=ALL
+" highlight multiexpanse ctermfg=202
+
 " ... in script block
 syntax match shDerefSimple "\${{.*}}" nextgroup=@shNoZSList
 
