@@ -62,6 +62,9 @@ highlight parens ctermfg=96
 syntax match equalsdoublequoteparens "\v\=\"\$\([^\(\)]+\)\"" containedin=ALL
 highlight equalsdoublequoteparens ctermfg=197
 
+syntax match doublebraceparens "\v\=\"\$\{\{.{-}\}\}.*\$\([^\(\)]+\)\"" containedin=ALL
+highlight doublebraceparens ctermfg=202
+
 " syntax match multiexpanse "\v\=\"\$\{[^\"]+\}" containedin=ALL
 " highlight multiexpanse ctermfg=202
 
